@@ -1,0 +1,12 @@
+version: '3.6'
+
+services:
+
+    notekeep-database:
+        image: mongo:4.0.6
+        volumes:
+            - notekeep-db-volume:/data/db
+        ports:
+            - 27027:27017
+volumes:
+    ? notekeep-db-volume
