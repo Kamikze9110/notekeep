@@ -14,7 +14,6 @@ import reactor.core.publisher.Mono;
 public class TaskServiceImpl implements TaskService {
 	
 	private final NoteService noteService;
-	private final TaskService taskService;
 	private final TaskRepository repository;
 
 	@Override
@@ -36,12 +35,7 @@ public class TaskServiceImpl implements TaskService {
 	@Override
 	public Mono<Task> updateTask(String noteId, String taskId, Task task) {
 		// TODO Auto-generated method stub
-		return repository.save(task)
-				.zipWith(noteService.findByID(noteId), 
-					(task1, note) -> {
-						noteService.saveNote(note).subscribe();
-						return task1;
-					});
+		return repository.save(task);
 	}
 
 	@Override
