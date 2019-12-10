@@ -13,7 +13,7 @@ public interface TaskService {
 	
     Mono<Task> updateTask(String noteId, String taskId, Task task);
 	
-	void deleteTaskByID(String id);
+    Mono<Void> deleteTaskByID(String id);
 	
 	Flux<Task> findAllTask();
 

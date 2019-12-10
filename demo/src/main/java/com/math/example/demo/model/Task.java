@@ -15,5 +15,7 @@ public class Task {
 	private String id; 
 	
 	private String description;
+	
+	private boolean complete;
 
 }

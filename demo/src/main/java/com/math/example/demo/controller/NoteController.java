@@ -69,5 +69,10 @@ public class NoteController {
 			@PathVariable("taskId") String taskId) {
 		return taskService.updateTask(noteId , taskId , task);
 	}
+	
+	@DeleteMapping("/task/{id}")
+	public Mono<Void> deleteTask(@PathVariable("id") String id){
+		return taskService.deleteTaskByID(id);
+	}
 
 }

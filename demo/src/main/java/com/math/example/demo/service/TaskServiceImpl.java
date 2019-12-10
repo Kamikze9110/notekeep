@@ -39,8 +39,8 @@ public class TaskServiceImpl implements TaskService {
 	}
 
 	@Override
-	public void deleteTaskByID(String id) {
-		repository.deleteById(id);
+	public Mono<Void> deleteTaskByID(String id) {
+		return repository.deleteById(id);
 	}
 
 	@Override
